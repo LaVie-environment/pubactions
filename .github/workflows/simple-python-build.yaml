@@ -6,13 +6,21 @@ on:
       - main
 
 jobs:
+  # This workflow contains a single job called "build"
   build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps are a sequence of tasks executed as part of a job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
     - uses: actions/checkout@v3
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x' # Use the desired Python version here
+
+    # Runs a single command using the runners shell
     - name: Run Python script
-      run: python main.py # Replace 'helloworld.py' with the name of your Python script
+      run: python main.py # Replace 'main.py' with the name of your Python script
